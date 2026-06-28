@@ -1,8 +1,11 @@
 import { formatLKR, formatDate } from '../utils'
 
 const COMPANY = {
-  name: 'PURE CUSTOM CREATION',
-  tagline: 'Custom Branded Water Bottle Supply',
+  nameTop: 'PURE',
+  nameBottom: 'CUSTOM CREATION',
+  legalName: 'PURE CUSTOM CREATION',
+  tagline: 'Bottled Branding | Labels | Packaging Support',
+  descriptor: 'Customized branded water bottles, labels, packaging and brand support',
   address: 'Kandy, Sri Lanka',
   phone: '+94 76 188 2745',
   email: 'purecustomcreation@gmail.com',
@@ -19,45 +22,53 @@ export default function InvoicePrint({ invoice, items, customer }) {
 
   return (
     <div className="invoice-paper luxury-invoice" id="printable-invoice">
-      <div className="luxury-topline" />
+      <div className="brand-ribbon">
+        <span>Premium Brand Supply</span>
+        <span>{COMPANY.address}</span>
+      </div>
 
-      <header className="luxury-header">
-        <div className="brand-block">
-          <div className="brand-mark">PCC</div>
-          <div>
-            <h1>{COMPANY.name}</h1>
-            <p>{COMPANY.tagline}</p>
-            <p>{COMPANY.address}</p>
+      <header className="luxury-header refined-header">
+        <div className="brand-block refined-brand">
+          <div className="monogram-frame">
+            <span>P</span>
+            <i />
+            <span>C</span>
+          </div>
+          <div className="wordmark-block">
+            <div className="wordmark-primary">{COMPANY.nameTop}</div>
+            <div className="wordmark-secondary">{COMPANY.nameBottom}</div>
+            <div className="brand-tagline">{COMPANY.tagline}</div>
+            <div className="brand-descriptor">{COMPANY.descriptor}</div>
           </div>
         </div>
 
-        <div className="doc-title-block">
+        <div className="doc-title-block refined-doc-title">
           <div className="doc-title">{title}</div>
           <div className={isPaid ? 'status-pill paid' : 'status-pill unpaid'}>
-            {isPaid ? 'PAID' : 'UNPAID'}
+            {isPaid ? 'Paid' : 'Unpaid'}
           </div>
         </div>
       </header>
 
-      <section className="invoice-info-grid">
+      <section className="invoice-info-grid refined-info-grid">
         <div className="info-card bill-to-card">
-          <div className="small-label">Invoice To</div>
+          <div className="small-label">Prepared For</div>
           <div className="customer-name">{customer?.business_name}</div>
           {customer?.owner_name && <div>{customer.owner_name}</div>}
-          {customer?.location && <div>{customer.location}</div>}
-          {customer?.phone && <div>{customer.phone}</div>}
+          {customer?.location && <div>Delivery Location: {customer.location}</div>}
+          {customer?.phone && <div>Contact: {customer.phone}</div>}
         </div>
 
-        <div className="info-card invoice-meta-card">
-          <div className="meta-row"><span>Invoice No</span><strong>{invoice.invoice_no}</strong></div>
-          <div className="meta-row"><span>Date</span><strong>{formatDate(invoice.invoice_date)}</strong></div>
-          <div className="meta-row"><span>Payment Terms</span><strong>{isSettlement ? 'Settlement' : 'Due on Delivery'}</strong></div>
-          <div className="meta-row"><span>Reference</span><strong>{isSettlement ? 'Previous Balance' : 'Bottle Supply'}</strong></div>
+        <div className="info-card invoice-meta-card refined-meta-card">
+          <div className="meta-row"><span>Document No</span><strong>{invoice.invoice_no}</strong></div>
+          <div className="meta-row"><span>Issue Date</span><strong>{formatDate(invoice.invoice_date)}</strong></div>
+          <div className="meta-row"><span>Terms</span><strong>{isSettlement ? 'Settlement' : 'Due on Delivery'}</strong></div>
+          <div className="meta-row"><span>Service</span><strong>{isSettlement ? 'Previous Balance' : 'Bottle Supply'}</strong></div>
         </div>
       </section>
 
       {isSettlement ? (
-        <table className="luxury-table settlement-table">
+        <table className="luxury-table settlement-table refined-table">
           <thead>
             <tr>
               <th>Description</th>
@@ -75,7 +86,7 @@ export default function InvoicePrint({ invoice, items, customer }) {
         </table>
       ) : (
         <>
-          <table className="luxury-table">
+          <table className="luxury-table refined-table">
             <thead>
               <tr>
                 <th>Item Description</th>
@@ -98,18 +109,18 @@ export default function InvoicePrint({ invoice, items, customer }) {
             </tbody>
           </table>
 
-          <div className="prepaid-note luxury-note">
-            Label cost already prepaid. This invoice is for bottle supply only.
+          <div className="prepaid-note refined-note">
+            Label cost already prepaid. This document covers bottle supply only.
           </div>
         </>
       )}
 
-      <section className="invoice-lower-grid">
-        <div className="notes-panel">
-          <div className="notes-title">Notes / Terms & Conditions</div>
+      <section className="invoice-lower-grid refined-lower-grid">
+        <div className="notes-panel refined-notes">
+          <div className="notes-title">Business Terms</div>
           {isSettlement ? (
             <ol>
-              <li>This bill is issued for previous outstanding settlement only.</li>
+              <li>This document is issued for previous outstanding settlement only.</li>
               <li>Settlement must be completed as agreed before future supply continues.</li>
               <li>This settlement does not change current bottle supply prices.</li>
             </ol>
@@ -124,13 +135,13 @@ export default function InvoicePrint({ invoice, items, customer }) {
           )}
         </div>
 
-        <div className="totals-panel">
+        <div className="totals-panel refined-totals">
           <div className="totals-row"><span>Subtotal</span><span>{formatLKR(invoice.subtotal)}</span></div>
           <div className="totals-row"><span>Discount</span><span>{formatLKR(0)}</span></div>
           <div className="totals-row"><span>Rounding</span><span>{formatLKR(invoice.rounding_adjustment)}</span></div>
           <div className="totals-row"><span>Paid Amount</span><span>{formatLKR(totalPaid)}</span></div>
           <div className="totals-row"><span>Balance Due</span><span>{formatLKR(invoice.balance_amount)}</span></div>
-          <div className="totals-row grand"><span>Grand Total</span><span>{formatLKR(invoice.total_amount)}</span></div>
+          <div className="totals-row grand"><span>Total Payable</span><span>{formatLKR(invoice.total_amount)}</span></div>
         </div>
       </section>
 
@@ -138,24 +149,22 @@ export default function InvoicePrint({ invoice, items, customer }) {
         <div className="invoice-note-line"><strong>Note:</strong> {invoice.notes}</div>
       )}
 
-      <section className="payment-sign-grid">
-        <div className="payment-details">
+      <section className="payment-sign-grid refined-payment-grid">
+        <div className="payment-details refined-payment">
           <div className="small-label">Payment Details</div>
           <div>{COMPANY.payment}</div>
-          <div>Contact: {COMPANY.phone}</div>
-          <div>Email: {COMPANY.email}</div>
+          <div>{COMPANY.phone}</div>
+          <div>{COMPANY.email}</div>
         </div>
 
-        <div className="signature-area">
+        <div className="signature-area refined-signatures">
           <div className="signature-line"><span>Received By</span></div>
           <div className="signature-line"><span>Authorized Signature</span></div>
         </div>
       </section>
 
-      <footer className="luxury-footer">
-        <span>{COMPANY.phone}</span>
-        <span>{COMPANY.address}</span>
-        <span>{COMPANY.name}</span>
+      <footer className="luxury-footer refined-footer">
+        <span>Thank you for choosing {COMPANY.legalName}</span>
       </footer>
     </div>
   )
