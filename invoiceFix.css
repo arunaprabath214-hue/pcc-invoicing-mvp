@@ -1,0 +1,21 @@
+.totals-panel .totals-row.grand {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.totals-panel .totals-row.grand span {
+  white-space: nowrap;
+}
+
+.totals-panel .totals-row.grand span:first-child {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.totals-panel .totals-row.grand span:last-child {
+  font-size: 12.5px;
+  text-align: right;
+}
