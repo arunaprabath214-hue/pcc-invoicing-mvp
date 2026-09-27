@@ -8,21 +8,17 @@ import Products from './screens/Products'
 import CustomerPrices from './screens/CustomerPrices'
 import Payments from './screens/Payments'
 import Ledger from './screens/Ledger'
+import FinanceDashboard from './screens/FinanceDashboard'
+import FinanceRequests from './screens/FinanceRequests'
 
 function AppRoutes() {
   const { session } = useAuth()
 
   if (session === undefined) {
-    return (
-      <div className="loading-state" style={{ paddingTop: '40vh' }}>
-        Loading...
-      </div>
-    )
+    return <div className="loading-state" style={{ paddingTop: '40vh' }}>Loading...</div>
   }
 
-  if (!session) {
-    return <Login />
-  }
+  if (!session) return <Login />
 
   return (
     <div className="app-shell">
@@ -33,6 +29,8 @@ function AppRoutes() {
         <Route path="/prices" element={<CustomerPrices />} />
         <Route path="/payments" element={<Payments />} />
         <Route path="/ledger" element={<Ledger />} />
+        <Route path="/finance" element={<FinanceDashboard />} />
+        <Route path="/finance/requests" element={<FinanceRequests />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <BottomNav />
