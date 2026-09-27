@@ -5,7 +5,7 @@ const navItems = [
   { to: '/customers', icon: '🏪', label: 'Customers' },
   { to: '/prices', icon: '🏷️', label: 'Prices' },
   { to: '/payments', icon: '💵', label: 'Payments' },
-  { to: '/ledger', icon: '📒', label: 'Ledger' },
+  { to: '/finance', icon: '💰', label: 'Finance' },
 ]
 
 export default function BottomNav() {
