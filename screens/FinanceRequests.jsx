@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../supabaseClient'
 import Header from '../components/Header'
+import { useAuth } from '../AuthContext'
 import { formatLKR } from '../utils'
 
 const empty = { request_type:'expense', title:'', description:'', amount:'', supplier_name:'', notes:'' }
@@ -57,7 +58,7 @@ export default function FinanceRequests() {
           <div className="flex-between"><strong>{r.title}</strong><span className={'badge badge-'+(r.status==='approved'?'paid':r.status==='rejected'?'unpaid':'partial')}>{r.status}</span></div>
           <div className="text-dim" style={{fontSize:13,marginTop:5}}>{r.request_type} · {formatLKR(r.amount)}{r.expense_categories?.name?' · '+r.expense_categories.name:''}</div>
           {r.description && <p style={{fontSize:13}}>{r.description}</p>}
-          {r.status==='pending' && <div className="btn-block-row"><button className="btn btn-success" onClick={()=>decide(r.id,'approved')}>Approve</button><button className="btn btn-danger" onClick={()=>decide(r.id,'rejected')}>Reject</button></div>}
+          {isAdmin && r.status==='pending' && <div className="btn-block-row"><button className="btn btn-success" onClick={()=>decide(r.id,'approved')}>Approve</button><button className="btn btn-danger" onClick={()=>decide(r.id,'rejected')}>Reject</button></div>}
         </div>)
       }
     </main>
