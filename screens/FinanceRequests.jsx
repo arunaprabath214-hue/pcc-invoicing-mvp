@@ -7,6 +7,7 @@ import { formatLKR } from '../utils'
 const empty = { request_type:'expense', title:'', description:'', amount:'', supplier_name:'', notes:'' }
 
 export default function FinanceRequests() {
+  const { isAdmin } = useAuth()
   const [requests,setRequests]=useState([])
   const [categories,setCategories]=useState([])
   const [form,setForm]=useState(empty)
@@ -68,6 +69,7 @@ export default function FinanceRequests() {
           <div className="text-dim" style={{fontSize:13,marginTop:5}}>{r.request_type} · {formatLKR(r.amount)}{r.expense_categories?.name?' · '+r.expense_categories.name:''}</div>
           {r.description && <p style={{fontSize:13}}>{r.description}</p>}
           {isAdmin && r.status==='pending' && <div className="btn-block-row"><button className="btn btn-success" onClick={()=>decide(r.id,'approved')}>Approve</button><button className="btn btn-danger" onClick={()=>decide(r.id,'rejected')}>Reject</button></div>}
+          {isAdmin && r.status==='approved' && <button className="btn btn-primary" style={{marginTop:10}} onClick={()=>complete(r.id)}>Record Payment</button>}
         </div>)
       }
     </main>
