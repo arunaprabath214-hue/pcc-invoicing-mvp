@@ -35,6 +35,15 @@ export default function FinanceRequests() {
     setForm(empty);setShow(false);setSaving(false);load()
   }
 
+  async function complete(id){
+    if(!isAdmin)return
+    const method=window.prompt('Payment method: cash or bank_transfer','bank_transfer')
+    if(!['cash','bank_transfer'].includes(method))return
+    const reference=window.prompt('Payment reference (optional)')||null
+    const {error}=await supabase.rpc('complete_finance_request',{p_request_id:id,p_payment_method:method,p_reference:reference})
+    if(error)setError(error.message);else load()
+  }
+
   async function decide(id,decision){
     const {data:{user}}=await supabase.auth.getUser()
     const note=window.prompt(decision==='approved'?'Approval note (optional)':'Reason for rejection (optional)') || null
