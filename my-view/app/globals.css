@@ -76,3 +76,46 @@ html,body{background:#fff!important;color:#172033!important;-webkit-print-color-
 .statement-qr>p{font-size:10px;line-height:1.65;color:#687386;margin:0}
 @media(max-width:520px){.statement-qr{flex-direction:column;align-items:stretch}.statement-qr-placeholder{align-self:center;width:160px;min-height:120px;flex-basis:auto}}
 @media print{.statement-qr{break-inside:avoid}}
+
+.statement-qr-image{display:block;flex:0 0 124px;width:124px;height:124px;object-fit:contain;background:#fff;border-radius:6px}
+@media(max-width:520px){.statement-qr-image{align-self:center;width:160px;height:160px;flex-basis:160px}}
+@media print{
+@page{size:A4 portrait;margin:7mm}
+.report{zoom:.70;width:142.85%!important;padding:0!important;border:0!important;box-shadow:none!important}
+.statement-brand{padding-bottom:9px;gap:8px}
+.statement-mark{width:38px;height:38px;font-size:12px}
+.statement-company h3{font-size:12px}
+.statement-company p{font-size:8px;margin-top:2px}
+.statement-kind span,.statement-ref span,.statement-meta>div>span,.eyebrow{font-size:7px}
+.statement-kind strong{font-size:8px}
+.statement-title{padding:10px 0 8px;gap:10px}
+.statement-title h2{font-size:15px;margin:4px 0}
+.statement-title p{font-size:8px}
+.statement-ref{padding:7px;min-width:110px}
+.statement-ref strong{font-size:10px;margin:4px 0}
+.statement-ref small{font-size:8px}
+.statement-meta{padding:8px;gap:8px;margin-bottom:10px}
+.statement-meta strong{font-size:9px}
+.statement-meta small{font-size:8px}
+.statement-table thead th{font-size:7px;padding:6px 7px}
+.statement-table tbody td{font-size:8px;padding:6px 7px}
+.statement-table tbody td:first-child strong{font-size:8px}
+.statement-table tbody td:first-child small{font-size:7px;margin-top:2px}
+.statement-table{margin-bottom:10px}
+.statement-bottom{gap:12px}
+.statement-note strong{font-size:8px}
+.statement-note p{font-size:7px;line-height:1.35;margin-top:4px}
+.statement-totals>div{font-size:8px;padding:5px 0}
+.statement-totals .statement-balance{padding:7px}
+.statement-bank{margin-top:10px}
+.statement-bank-title{padding:6px 9px}
+.statement-bank-title strong{font-size:8px}
+.statement-bank-title span{font-size:7px}
+.statement-bank-grid{padding:3px 9px 2px;gap:0 10px}
+.statement-bank-grid>div{font-size:7px;padding:4px 0}
+.statement-qr{padding:7px;gap:10px}
+.statement-qr-image{width:82px;height:82px;flex-basis:82px}
+.statement-qr>p{font-size:7px;line-height:1.35}
+.statement-bank>p{font-size:7px;padding:0 9px 6px}
+.statement-footer{margin-top:10px;padding-top:6px;font-size:7px}
+}
