@@ -68,3 +68,11 @@ html,body{background:#fff!important;color:#172033!important;-webkit-print-color-
 .statement-bank>p{font-size:9px;line-height:1.5;color:#687386;margin:0;padding:0 14px 12px}
 @media(max-width:520px){.statement-bank-grid{grid-template-columns:1fr}.statement-bank-grid .bank-reference{grid-column:auto}.statement-bank-grid>div{font-size:9px}}
 @media print{.statement-bank{break-inside:avoid}.statement-note p{margin-top:6px}}
+
+.statement-qr{display:flex;align-items:center;gap:16px;padding:14px;border-top:1px solid #edf0f4;background:#fff}
+.statement-qr-placeholder{flex:0 0 124px;min-height:124px;border:1px dashed #9aa8bb;border-radius:8px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10px;background:#f8fafc;color:#172554}
+.statement-qr-placeholder strong{font-size:11px;letter-spacing:.08em}
+.statement-qr-placeholder span{font-size:8px;line-height:1.5;color:#687386;margin-top:7px}
+.statement-qr>p{font-size:10px;line-height:1.65;color:#687386;margin:0}
+@media(max-width:520px){.statement-qr{flex-direction:column;align-items:stretch}.statement-qr-placeholder{align-self:center;width:160px;min-height:120px;flex-basis:auto}}
+@media print{.statement-qr{break-inside:avoid}}
