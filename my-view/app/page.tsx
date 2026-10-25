@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 
 type Tab = "Customer" | "Delivery" | "Payments" | "Customer Report";
 type Customer = { id: string; name: string; contact: string; phone: string; status: "Lead" | "Active" };
-type Line = { product: string; qty: number; price: number };
+type Line = { product: string; qty: number; price: number; labelQty?: number; labelVolume?: string; labelRate?: number };
 type Delivery = { id: string; customerId: string; date: string; lines: Line[]; total: number; invoiceId: string; paid: number };
 type Receipt = { id: string; customerId: string; date: string; amount: number; method: string; invoiceId: string };
 const money = (n: number) => new Intl.NumberFormat("en-LK", { style: "currency", currency: "LKR", maximumFractionDigits: 2 }).format(n);
