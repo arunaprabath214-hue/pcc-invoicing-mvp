@@ -7,7 +7,7 @@ import { supabase } from "../lib/supabase";
 type Customer = { id:string; business_name:string; owner_name:string|null; contact_person:string|null; phone:string|null; location:string|null; status:string; customer_grade:string|null };
 type Product = { id:string; product_name:string; size:string; case_qty:number; default_selling_price:number|null };
 type Delivery = { id:string; delivery_no:string; customer_id:string; delivery_date:string; notes:string|null; created_at:string };
-type Advance = { id:string; customer_id:string; amount_received:number; amount_remaining:number; payment_date:string; payment_method:string; reference:string|null };
+type Advance = { id:string; customer_id:string; amount_received:number; amount_remaining:number; payment_date:string; payment_method:string; reference:string|null; created_at:string };
 type LabelStock = { id:string; customer_id:string; volume:string; quantity_received:number; quantity_used:number };
 type Payment = { id:string; customer_id:string; delivery_id:string|null; amount:number; payment_date:string; payment_method:string; reference:string|null };
 type Tab = "Overview"|"Customers"|"Quotations"|"Labels & Advances"|"Delivery"|"Payments"|"Reports";
