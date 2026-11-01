@@ -88,6 +88,78 @@ td{color:#3b5149}tbody tr:last-child td{border-bottom:0}tbody tr:hover{backgroun
 @media(max-width:390px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar{padding:16px}.topbar h1{font-size:22px}.nav button{min-width:55px;font-size:8px}.stat strong{font-size:18px}}
 @media(prefers-reduced-motion:no-preference){.panel,.stat{animation:rise .45s ease both}@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}}
 @media print{.sidebar,.topbar-actions,.actions{display:none!important}.shell{display:block}.workspace{padding:0}.panel,.stat{box-shadow:none}}
+/* PCC MY VIEW premium dark system */
+@media screen{
+:root{color-scheme:dark;--night:#070b14;--deep:#0b1220;--emerald:#122238;--mint:#54f0a1;--aqua:#54d6df;--ink:#edf4f7;--muted:#93a4b4;--line:#263447;--paper:#111b2b;--canvas:#080e18;--shadow:0 18px 48px rgba(0,0,0,.24)}
+html,body{background:#080e18!important;color:#e7eff5!important}
+.shell{background:radial-gradient(ellipse at 78% -18%,#123c3b 0,transparent 38%),linear-gradient(145deg,#080e18,#0b1422 70%,#08101b)!important}
+.workspace{color:#e7eff5}
+.sidebar{background:linear-gradient(180deg,#101c2d 0%,#0a1321 65%,#080f1b 100%)!important;border-right:1px solid #243449;box-shadow:14px 0 42px #0005}
+.brand-sub,.side-label,.nav-group-label{color:#8196aa!important}
+.nav button{color:#a8b8c7!important}
+.nav button:hover{background:#ffffff0b!important;color:#fff!important}
+.nav button.active,.desktop-nav button.active{background:linear-gradient(110deg,#54f0a1,#45c9c9)!important;color:#062017!important;box-shadow:0 8px 24px #43dca52a!important}
+.side-footer{color:#8498aa!important}.side-footer strong{color:#e4f0f7!important}
+.topbar{background:radial-gradient(circle at 86% 12%,#1b6661 0,transparent 35%),linear-gradient(115deg,#111e31 0%,#102a3b 55%,#123e42 100%)!important;border:1px solid #2b4658;box-shadow:0 20px 55px #0005}
+.topbar:before{background:radial-gradient(circle,#54f0a150 0,transparent 68%)}
+.topbar h1{color:#f2f7fa}.topbar p{color:#a9bdca}.eyebrow{color:#70efb0}
+.sync-pill{background:#ffffff0b;border-color:#ffffff1c;color:#c8d9e4}
+.panel,.dash-card,.sidecard{background:linear-gradient(145deg,#121e2e 0%,#0e1928 100%)!important;border:1px solid #26384c!important;color:#e7eff5!important;box-shadow:0 16px 42px #0003!important}
+.panel h2,.panel h3,.dash-section-head h3,.dash-card-head h3{color:#edf5f8!important}
+.sub,.muted,.field label{color:#93a7b7!important}
+.field input,.field select,.field textarea{background:#0a1422!important;border:1px solid #2a3d52!important;color:#edf5f8!important}
+.field input::placeholder,.field textarea::placeholder{color:#73889a}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#54d99a!important;background:#0d1b29!important;box-shadow:0 0 0 4px #54f0a11c!important}
+button{background:#172538;color:#dce8ef;border-color:#30445a;box-shadow:0 3px 12px #0002}
+button:hover{background:#1d3045;border-color:#4b6a7e;box-shadow:0 8px 20px #0003}
+button.primary{background:linear-gradient(110deg,#54f0a1,#45c9c9)!important;color:#062017!important;border-color:transparent!important;box-shadow:0 8px 22px #45dba52b!important}
+.topbar button{background:#ffffff0d!important;color:#e8f2f5!important;border-color:#ffffff25!important}
+.table{background:#0d1827!important;border:1px solid #26384b!important}
+table{background:transparent}
+th{background:#17263a!important;color:#9fb2c1!important;border-color:#293a4d!important}
+td{color:#d1dee6!important;border-color:#223247!important}
+tbody tr:hover{background:#16263a!important}
+.msg.ok,.success{background:#102c27!important;color:#83e9b2!important;border-color:#245d48!important}
+.msg.err,.error{background:#321c23!important;color:#ffb4b4!important;border-color:#6b3440!important}
+.warn{background:linear-gradient(110deg,#132d2a,#152b35)!important;color:#a7e7cb!important;border-color:#285447!important}
+.state-banner{background:#111e2d!important;border-color:#2a3e53!important;color:#e6eff5}
+.state-banner small{color:#9eb0be}
+.state-banner.offline{background:#2a2519!important;border-color:#65512b!important}
+.state-banner.error{background:#301d24!important;border-color:#673944!important}
+.state-banner.success{background:#112b24!important;border-color:#285a46!important}
+.state-banner.loading{background:#15253a!important;border-color:#2b4666!important}
+.empty-state,.dash-empty{background:linear-gradient(145deg,#111e2d,#0d1927)!important;border-color:#30465a!important;color:#9aafbd!important}
+.stat{background:linear-gradient(145deg,#172c3d,#101e2d 78%,#0c1825)!important;border-color:#2d4b5b!important}
+.stat:nth-child(2),.stat:nth-child(3){background:linear-gradient(145deg,#173b39,#132b34)!important;border-color:#2c6257!important}
+.stat:nth-child(4){background:linear-gradient(145deg,#173d3c,#10282f)!important;border-color:#2b6256!important}
+.stat span,.stat:nth-child(2) span,.stat:nth-child(3) span,.stat:nth-child(4) span{color:#a6c1c8!important}
+.stat strong,.stat:nth-child(2) strong,.stat:nth-child(3) strong,.stat:nth-child(4) strong{color:#effbf6!important}
+.dash-welcome{background:radial-gradient(circle at 85% 0%,#1b5b55 0,transparent 36%),linear-gradient(120deg,#14263a,#102b36)!important;border:1px solid #2a4858!important;color:#f0f8f8!important}
+.dash-welcome h2,.dash-welcome strong{color:#f2faf8!important}
+.dash-welcome p,.dash-welcome small{color:#a9c1c8!important}
+.dash-kpi,.dash-card{background:linear-gradient(145deg,#142236,#101b2b)!important;border-color:#2b3c50!important;color:#eaf3f7!important}
+.dash-kpi>strong,.dash-kpi strong,.ops-row strong,.quick-action strong,.leader-name strong,.leader-value strong,.activity-info strong,.activity-row>strong{color:#e8f2f6!important}
+.dash-kpi>small,.dash-kpi span,.ops-row small,.quick-action small,.leader-name small,.leader-value small,.activity-info small{color:#91a5b5!important}
+.kpi-icon,.quick-icon,.activity-icon,.leader-rank{background:#17352f!important;color:#6ce8a8!important}
+.quick-action{background:#122034!important;border-color:#2c4055!important}
+.quick-action:hover{background:#192c40!important;border-color:#3c6c62!important}
+.leader-row,.activity-row{border-color:#26384b!important}
+.chart-tooltip,.chart-period,.chart-legend,.chart-foot{color:#a9bac7!important}
+.chart-period{background:#142439!important;border-color:#30465a!important}
+.ops-alert{background:#30291a!important;border-color:#5d4c2b!important;color:#d8bd80!important}
+.pill{background:#1d2c40!important;color:#c0d0db!important}
+.pill.green{background:#12382c!important;color:#85e9b1!important}
+.pill.blue{background:#182e4b!important;color:#9fc5ff!important}
+.login{background:linear-gradient(145deg,#142236,#0d1928)!important}
+.login h2{color:#f0f7fa!important}
+.mobile-nav{background:rgba(9,20,33,.96)!important;border-color:#ffffff1c!important}
+.mobile-nav button{background:transparent!important;color:#a8bfcb!important}
+.mobile-nav button.active{background:linear-gradient(145deg,#54f0a1,#45c9c9)!important;color:#062017!important}
+.mobile-more-panel{background:rgba(11,24,39,.98)!important}
+.mobile-more-panel button{background:#ffffff0b!important;color:#e5f1f4!important}
+@media(max-width:700px){html,body{background:#080e18!important}.shell{background:#080e18!important}.sidebar{background:rgba(9,20,33,.96)!important;border:1px solid #ffffff1c!important}}
+}
+
 `;
 type C={id:string;business_name:string;status:string;phone:string|null;contact_person:string|null};
 type P={id:string;product_name:string;size:string;case_qty:number;factory_cost:number|null;default_selling_price:number|null};
@@ -135,7 +207,8 @@ export default function PccWorkspace(){
  async function saveCompanyStock(){if(!supabase)return;B(true);try{if(!stockName.trim())throw Error("Stock item name required.");const q=Number(stockQty),costValue=Number(stockCost),reorder=Number(stockReorder);if(q<0||costValue<0||reorder<0)throw Error("Quantity and costs cannot be negative.");const {data,error}=await supabase.from("company_stock_items").insert({item_name:stockName.trim(),category:stockCategory,unit:stockUnit,quantity_on_hand:q,reorder_level:reorder,unit_cost:costValue,supplier_name:stockSupplier||null,created_by:session?.user.id}).select().single();if(error)throw error;if(q>0){const {error:me}=await supabase.from("company_stock_movements").insert({stock_item_id:data.id,movement_type:"purchase",quantity:q,unit_cost:costValue,movement_date:today(),reference:"OPENING-STOCK",used_for:"Opening balance",notes:"Initial stock balance",created_by:session?.user.id});if(me)throw me;}StockName("");StockQty("0");StockCost("0");StockReorder("0");StockSupplier("");notice("Company stock item saved.");await load()}catch(e){failure(e)}finally{B(false)}}
  async function saveStockMovement(){if(!supabase)return;B(true);try{const item=companyStocks.find(s=>s.id===moveItem);const q=Number(moveQty);if(!item||!Number.isFinite(q)||q<=0)throw Error("Choose a stock item and enter a positive quantity.");const incoming=["purchase","adjustment_in"].includes(moveType);if(!incoming&&q>Number(item.quantity_on_hand))throw Error("Not enough company stock available.");const unitCost=moveCost===""?Number(item.unit_cost):Number(moveCost);if(unitCost<0)throw Error("Unit cost cannot be negative.");const nextQty=Number(item.quantity_on_hand)+(incoming?q:-q);const {error:me}=await supabase.from("company_stock_movements").insert({stock_item_id:item.id,movement_type:moveType,quantity:q,unit_cost:unitCost,movement_date:moveDate,reference:moveRef||null,used_for:moveFor||null,notes:moveNotes||null,created_by:session?.user.id});if(me)throw me;const {error:ue}=await supabase.from("company_stock_items").update({quantity_on_hand:nextQty,unit_cost:incoming?unitCost:Number(item.unit_cost),updated_at:new Date().toISOString()}).eq("id",item.id);if(ue)throw ue;MoveQty("");MoveRef("");MoveFor("");MoveNotes("");notice("Stock movement recorded.");await load()}catch(e){failure(e)}finally{B(false)}}
  async function savePayment(){if(!supabase)return;B(true);try{if(!pc||Number(pa)<=0)throw Error("Select customer and enter a positive payment.");const {error}=await supabase.from("pcc_payments").insert({customer_id:pc,delivery_id:pd||null,amount:Number(pa),payment_date:pdate,payment_method:pm,reference:pr||null,created_by:session?.user.id});if(error)throw error;notice("Payment saved separately from prepaid label advances.");PA("");PR("");await load()}catch(e){failure(e)}finally{B(false)}}
- const field=(label:string,node:any)=><div className="field"><label>{label}</label>{node}</div>;\n const emptyState=(title:string,description:string,action?:string,onAction?:()=>void)=><div className="empty-state"><div className="empty-icon">✳</div><strong>{title}</strong><span>{description}</span>{action&&<button className="primary" onClick={onAction}>{action}</button>}</div>;\n const emptyForTab:Record<string,[number,string,string,string] | null>={"Customers":[customers.length,"No customers yet","Add your first customer to start building your PCC customer book.","Add a customer"],"Products":[products.length,"No products yet","Add your bottle products and set their default selling prices.","Add a product"],"Quotations":[quotes.length,"No quotations yet","Create an itemized quotation for a customer.","Create quotation"],"Prepaid Stock":[orders.length,"No prepaid stock orders yet","Record a customer-funded label or cap stock order.","Record prepaid stock"],"Stocks":[companyStocks.length,"No company stock items yet","Add your first company-owned inventory item.","Add stock item"],"Deliveries":[deliveries.length,"No deliveries yet","Record a delivery to create its delivery note and update stock.","Record delivery"],"Payments":[payments.length,"No payments yet","Record a customer payment to keep account balances up to date.","Record payment"],"Reports":[customers.length,"No customer data to report","Add customers and record their transactions to see account performance.","Add a customer"]};
+ const field=(label:string,node:any)=><div className="field"><label>{label}</label>{node}</div>;
+ const emptyState=(title:string,description:string,action?:string,onAction?:()=>void)=><div className="empty-state"><div className="empty-icon">✳</div><strong>{title}</strong><span>{description}</span>{action&&<button className="primary" onClick={onAction}>{action}</button>}</div>;\n const emptyForTab:Record<string,[number,string,string,string] | null>={"Customers":[customers.length,"No customers yet","Add your first customer to start building your PCC customer book.","Add a customer"],"Products":[products.length,"No products yet","Add your bottle products and set their default selling prices.","Add a product"],"Quotations":[quotes.length,"No quotations yet","Create an itemized quotation for a customer.","Create quotation"],"Prepaid Stock":[orders.length,"No prepaid stock orders yet","Record a customer-funded label or cap stock order.","Record prepaid stock"],"Stocks":[companyStocks.length,"No company stock items yet","Add your first company-owned inventory item.","Add stock item"],"Deliveries":[deliveries.length,"No deliveries yet","Record a delivery to create its delivery note and update stock.","Record delivery"],"Payments":[payments.length,"No payments yet","Record a customer payment to keep account balances up to date.","Record payment"],"Reports":[customers.length,"No customer data to report","Add customers and record their transactions to see account performance.","Add a customer"]};
  if(!ready)return <><style>{css}</style><main className="app">Loading…</main></>;
  if(!supabase)return <><style>{css}</style><main className="app"><section className="panel"><h2>Supabase configuration required</h2><p>Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY in Vercel.</p></section></main></>;
  if(!session)return <><style>{css}</style><main className="app"><section className="panel login"><div className="logo">P</div><h2>PCC MY VIEW</h2><p className="sub">Sign in to manage customer operations.</p><div className="field"><label>Email</label><input type="email" value={email} onChange={e=>E(e.target.value)}/></div><div className="field" style={{marginTop:12}}><label>Password</label><input type="password" value={password} onChange={e=>Pwd(e.target.value)}/></div><div className="actions"><button className="primary" disabled={busy} onClick={()=>void(async()=>{B(true);try{const {error}=await supabase!.auth.signInWithPassword({email,password});if(error)throw error}catch(e){failure(e)}finally{B(false)}})()}>Sign in</button></div>{err&&<div className="msg err">{err}</div>}</section></main></>;
